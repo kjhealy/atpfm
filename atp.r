@@ -212,6 +212,10 @@ by.url.top <- data %>% group_by(BaseURL) %>%
         arrange(desc(n)) %>%
         data.frame()
 
+wiki.table <- data %>% filter(BaseURL=="en.wikipedia.org") %>%
+    select(Number, Link.title) %>% data.frame()
+
+
 youtube.table <- data %>% filter(BaseURL=="www.youtube.com") %>%
     select(Number, Link.title) %>% data.frame()
 
@@ -235,6 +239,10 @@ github.table <- data %>% filter(BaseURL=="github.com") %>%
     select(Number, Link.title) %>% data.frame
 
 shortlink.table <- data %>% filter(BaseURL=="goo.gl"|BaseURL=="cl.ly") %>%
+    select(Number, Link.title) %>% data.frame
+
+
+relay.table <- data %>% filter(BaseURL=="relay.fm") %>%
     select(Number, Link.title) %>% data.frame
 
 
